@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  authshield-db:
+    image: postgres:16-alpine
+    container_name: authshield_postgres_container
+    environment:
+      POSTGRES_USER: authshield_admin
+      POSTGRES_PASSWORD: sh13ld_P4ss_2026
+      POSTGRES_DB: authshield_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_backend_data:/var/lib/postgresql/data
+    restart: always
+
+volumes:
+  postgres_backend_data:
