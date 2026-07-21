@@ -1,0 +1,25 @@
+### Configuración de variables locales
+@hostname = localhost
+@port = 3000
+@baseUrl = http://{{hostname}}:{{port}}
+
+### 1. Registrar un usuario nuevo
+POST {{baseUrl}}/api/users/register
+Content-Type: application/json
+
+{
+    "email": "luciano.test2@gmail.com",
+    "user_name": "luciano_dev2",
+    "password_raw": "BocaCampeon2026!"
+}
+
+###
+
+### 2. Iniciar sesión (Login)
+POST {{baseUrl}}/api/users/login
+Content-Type: application/json
+
+{
+    "email": "luciano.test@gmail.com",
+    "password_raw": "BocaCampeon2026!"
+}
